@@ -9,15 +9,22 @@ import Cards from './components/Cards'
 import Footer from './components/Footer'
 import LocomotiveScroll from 'locomotive-scroll';
 import { motion } from 'framer-motion'
+import './cursor.css'
+import { useEffect } from 'react';
+import { initCursor } from './cursor.js';
 
 function App() {
 
   const locomotiveScroll = new LocomotiveScroll();
 
+  useEffect(() => {
+    initCursor();
+  }, []);
+
   return (
 
     <div className=' w-full min-h-screen text-white bg-zinc-900'>
-
+      <div className='cursor transition: transform 0.6s cubic-bezier(0.5, 1, 0.89, 1)'></div>
       <Navbar />
       <Landing />
       <Marqee />
